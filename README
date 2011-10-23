@@ -1,0 +1,12 @@
+                                Redline
+
+             	     a Redis-backed Queue for Python
+
+Example:
+
+>>> from redline import Redline
+>>> redline = Redline("test")
+>>> redline.push("james")
+redline:queue:test james
+>>> redline.pop()
+'james'
