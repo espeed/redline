@@ -32,7 +32,7 @@ class Redline(object):
     def push_unique(self,element):
         seen = self.check_seen(element)
         if not seen:
-            Queue.push(self,element)
+            self.push(self,element)
             self.redis.sadd(self.pending_key,element)
 
     def pop(self):
