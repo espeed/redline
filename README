@@ -1,6 +1,6 @@
                                 Redline
 
-             	     a Redis-backed Queue for Python
+                 a Redis-backed task queue for Python
 
 Example:
 
