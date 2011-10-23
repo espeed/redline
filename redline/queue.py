@@ -28,12 +28,12 @@ class Redline(object):
     def push(self,element):
         print self.queue_key, element
         push_element = self.redis.lpush(self.queue_key,element)
+        self.redis.sadd(self.pending_key,element)
 
     def push_unique(self,element):
         seen = self.check_seen(element)
         if not seen:
             self.push(self,element)
-            self.redis.sadd(self.pending_key,element)
 
     def pop(self):
         popped_element = self.redis.rpoplpush(self.queue_key,self.processing_key)
